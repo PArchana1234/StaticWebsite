@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeCare Hospital</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">✚ LifeCare Hospital</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#appointment">Appointment</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <button onclick="showLogin()">Login</button>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="tagline">WELCOME TO LIFECARE HOSPITAL</p>
+        <h1>Better Health for a<br>
+            <span>Brighter Future</span></h1>
+        <p>Trusted healthcare, experienced doctors and
+        modern facilities for you and your family.</p>
+        <button onclick="goToAppointment()">
+            Book an Appointment →
+        </button>
+    </div>
+    <div class="hero-image">🏥</div>
+</section>
+
+<section id="services">
+    <h2>Our Medical Specializations</h2>
+    <div class="grid">
+        <div class="card"><div class="icon">❤️</div>
+            <h3>Cardiology</h3><p>Heart health and cardiac care.</p></div>
+        <div class="card"><div class="icon">🧠</div>
+            <h3>Neurology</h3><p>Brain and nervous system care.</p></div>
+        <div class="card"><div class="icon">🦴</div>
+            <h3>Orthopedics</h3><p>Bone and joint treatments.</p></div>
+        <div class="card"><div class="icon">👶</div>
+            <h3>Pediatrics</h3><p>Healthcare for children.</p></div>
+        <div class="card"><div class="icon">✨</div>
+            <h3>Dermatology</h3><p>Skin and hair consultations.</p></div>
+        <div class="card"><div class="icon">🌸</div>
+            <h3>Gynecology</h3><p>Women's healthcare.</p></div>
+    </div>
+</section>
+
+<section id="doctors">
+    <h2>Meet Our Expert Doctors</h2>
+
+    <input id="search" class="search"
+        type="search"
+        placeholder="Search doctors or specializations..."
+        oninput="searchDoctors()">
+
+    <div class="grid" id="doctorList">
+        <div class="card doctor" data-search="priya cardiology">
+            <div class="icon">👩‍⚕️</div>
+            <h3>Dr. Priya Sharma</h3>
+            <p>Cardiologist</p>
+            <p>Mon–Fri | 9 AM–1 PM</p>
+            <button onclick="bookDoctor('Dr. Priya Sharma')">
+                Book Visit
+            </button>
+        </div>
+
+        <div class="card doctor" data-search="rohan neurology">
+            <div class="icon">👨‍⚕️</div>
+            <h3>Dr. Rohan Mehta</h3>
+            <p>Neurologist</p>
+            <p>Mon–Sat | 10 AM–2 PM</p>
+            <button onclick="bookDoctor('Dr. Rohan Mehta')">
+                Book Visit
+            </button>
+        </div>
+
+        <div class="card doctor" data-search="anjali pediatrics">
+            <div class="icon">👩‍⚕️</div>
+            <h3>Dr. Anjali Verma</h3>
+            <p>Pediatrician</p>
+            <p>Mon–Fri | 10 AM–4 PM</p>
+            <button onclick="bookDoctor('Dr. Anjali Verma')">
+                Book Visit
+            </button>
+        </div>
+
+        <div class="card doctor" data-search="vikram orthopedics">
+            <div class="icon">👨‍⚕️</div>
+            <h3>Dr. Vikram Singh</h3>
+            <p>Orthopedic Surgeon</p>
+            <p>Tue–Sat | 9 AM–12 PM</p>
+            <button onclick="bookDoctor('Dr. Vikram Singh')">
+                Book Visit
+            </button>
+        </div>
+
+        <div class="card doctor" data-search="neha dermatology">
+            <div class="icon">👩‍⚕️</div>
+            <h3>Dr. Neha Kapoor</h3>
+            <p>Dermatologist</p>
+            <p>Mon–Sat | 11 AM–3 PM</p>
+            <button onclick="bookDoctor('Dr. Neha Kapoor')">
+                Book Visit
+            </button>
+        </div>
+
+        <div class="card doctor" data-search="meera gynecology">
+            <div class="icon">👩‍⚕️</div>
+            <h3>Dr. Meera Reddy</h3>
+            <p>Gynecologist</p>
+            <p>Mon–Fri | 9 AM–1 PM</p>
+            <button onclick="bookDoctor('Dr. Meera Reddy')">
+                Book Visit
+            </button>
+        </div>
+    </div>
+    <p id="noResults" hidden>No matching doctors found.</p>
+</section>
+
+<section id="appointment" class="appointment">
+    <h2>Book an Appointment</h2>
+    <form id="appointmentForm">
+        <label for="name">Patient Name</label>
+        <input id="name" type="text" required placeholder="Your name">
+
+        <label for="email">Email Address</label>
+        <input id="email" type="email" required placeholder="Your email">
+
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="tel" required
+            pattern="[0-9+() -]{7,18}" placeholder="Your phone number">
+
+        <label for="doctor">Select Doctor</label>
+        <select id="doctor" required>
+            <option value="">Choose a doctor</option>
+            <option>Dr. Priya Sharma</option>
+            <option>Dr. Rohan Mehta</option>
+            <option>Dr. Anjali Verma</option>
+            <option>Dr. Vikram Singh</option>
+            <option>Dr. Neha Kapoor</option>
+            <option>Dr. Meera Reddy</option>
+        </select>
+
+        <label for="date">Appointment Date</label>
+        <input id="date" type="date" required>
+
+        <label for="time">Appointment Time</label>
+        <select id="time" required>
+            <option value="">Choose a time</option>
+            <option>9:00 AM</option>
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>12:00 PM</option>
+            <option>2:00 PM</option>
+            <option>3:00 PM</option>
+            <option>4:00 PM</option>
+        </select>
+
+        <label for="reason">Reason for Visit</label>
+        <textarea id="reason" rows="3"
+            placeholder="Describe your concern (optional)"></textarea>
+
+        <button type="submit">Submit Appointment</button>
+        <p id="message" role="status"></p>
+    </form>
+</section>
+
+<section id="about" class="about">
+    <h2>About LifeCare Hospital</h2>
+    <p>We demonstrate patient-focused healthcare through a
+    modern, user-friendly hospital website design.</p>
+    <p>Explore our doctors, specialties and appointment form.</p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="grid">
+        <div class="card"><div class="icon">📍</div>
+            <h3>Our Address</h3>
+            <p>123 Health Street, Guntur, Andhra Pradesh</p></div>
+        <div class="card"><div class="icon">☎️</div>
+            <h3>Phone</h3><p>+91 98765 43210</p></div>
+        <div class="card"><div class="icon">✉️</div>
+            <h3>Email</h3><p>hello@lifecare.example</p></div>
+    </div>
+</section>
+
+<footer>
+    <h3>✚ LifeCare Hospital</h3>
+    <p>Your Health, Our Priority</p>
+    <p>© <span id="year"></span> LifeCare Hospital</p>
+</footer>
+
+</body>
+</html>
+

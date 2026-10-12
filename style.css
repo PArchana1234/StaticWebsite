@@ -1,0 +1,299 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #17385f;
+    background: #f4faff;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 18px 6%;
+    background: white;
+    box-shadow: 0 2px 12px #dce9f5;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: #0879d9;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #17385f;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #0879d9;
+}
+
+button {
+    background: #0879d9;
+    color: white;
+    border: none;
+    padding: 12px 19px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:hover {
+    background: #075ba5;
+    transform: translateY(-2px);
+}
+
+.hero {
+    min-height: 410px;
+    padding: 65px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background: linear-gradient(120deg, #dff3ff, #ffffff);
+}
+
+.hero-content {
+    max-width: 620px;
+}
+
+.tagline {
+    color: #0879d9;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.2;
+    margin: 14px 0;
+    color: #103b70;
+}
+
+.hero h1 span {
+    color: #0879d9;
+}
+
+.hero p {
+    margin-bottom: 20px;
+}
+
+.hero-image {
+    font-size: clamp(90px, 15vw, 160px);
+    background: #c6eaff;
+    padding: 25px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+section {
+    padding: 55px 7%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #103b70;
+    margin-bottom: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.card {
+    padding: 25px 18px;
+    background: white;
+    border: 1px solid #e0edf7;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 18px #dce9f54d;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px #b8d8f555;
+}
+
+.icon {
+    font-size: 43px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: #0879d9;
+    margin: 8px 0;
+}
+
+.card p {
+    color: #60758f;
+    margin-bottom: 8px;
+}
+
+.search {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    padding: 13px;
+    margin: 0 auto 28px;
+    border: 1px solid #cbddea;
+    border-radius: 8px;
+}
+
+.appointment {
+    background: #e5f4ff;
+}
+
+form {
+    max-width: 620px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #b8d8f555;
+}
+
+form label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 7px 0 12px;
+    border: 1px solid #cbddea;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: 2px solid #a6d7ff;
+    border-color: #0879d9;
+}
+
+form button {
+    width: 100%;
+    margin-top: 12px;
+}
+
+#message {
+    margin-top: 18px;
+    color: #087c50;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+#noResults {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.about {
+    text-align: center;
+    line-height: 1.9;
+}
+
+.contact {
+    background: #eaf6ff;
+}
+
+footer {
+    padding: 30px 15px;
+    background: #103b70;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 7px;
+}
+
+@media (max-width: 850px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        gap: 10px 15px;
+    }
+
+    .hero {
+        padding: 45px 6%;
+    }
+
+    .hero-image {
+        font-size: 90px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        padding: 20px;
+    }
+}
